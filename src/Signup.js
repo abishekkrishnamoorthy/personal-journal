@@ -2,13 +2,16 @@ import React from 'react'
 import Header from './Header'
 
 
-const Signup = () => {
+const Signup = ({}) => {
+       const handlevalidation=()=>{
+         
+       }
   return (
     <div className="App">
     <Header/>
     <div className='signuppanel'>
         <h1>SIGN UP</h1>
-        <form  action='/login' className='formsignup'>
+        <form  action='/login' className='formsignup' onSubmit={handlevalidation}>
         <input type="text" required 
                id='userid'
                placeholder='NAME'

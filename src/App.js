@@ -1,15 +1,17 @@
-import {  Route, Routes} from "react-router-dom";
+import {  Route, Routes, useNavigate} from "react-router-dom";
 import Login from "./Login";
 import Signup from "./Signup";
 import React ,{ useEffect, useState } from "react";
 import Dash from "./Dash";
+import { toast } from "react-toastify";
 
 function App() {
      const url="http://localhost:5000/user"
-     const [auth, setauth]=useState()
+     const [auth, setauth]=useState(false)
      const [user, setuser]=useState([])
-     const [userid, setuserid]=useState(" ")
-     const [passcode, setpasscode]=useState(" ")
+     const [userid, setuserid]=useState("")
+     const [passcode, setpasscode]=useState("")
+     const navigate=useNavigate()
      useEffect(()=>{
       const fetch_data=async ()=>{
         try {
@@ -21,15 +23,26 @@ function App() {
           
         }  
       }
-
         fetch_data()},[])
-
-      const handlelogin= async(e)=>{
-        e.preventDefault()
-        const getuser= user.filter(i=>i.username===userid)
-        const bool= getuser.map(i=>i.username === userid && i.passcode===passcode? true: false)
-        setauth(bool)
+    useEffect(()=>{
+      
+    },[auth])
+    const handlelogin= async(e)=>{
+      e.preventDefault()
+      const getuser= user.filter(i=>i.username === userid && i.passcode===passcode)
+      const bool=()=>{
+        if(getuser.length){
+          
+          return true
+        }else{
+          
+          return false
+        }
       }
+      bool()? navigate('/da'):navigate('/login')
+      setauth(bool)
+    }
+      
   return (
     <div>
       <Routes>
