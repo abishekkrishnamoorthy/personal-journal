@@ -3,7 +3,7 @@ import Login from "./Login";
 import Signup from "./Signup";
 import React ,{ useEffect, useState } from "react";
 import Dash from "./Dash";
-import { toast } from "react-toastify";
+import apiRequest from './apiRequest'
 
 function App() {
      const url="http://localhost:5000/user"
@@ -23,25 +23,56 @@ function App() {
           
         }  
       }
-        fetch_data()},[])
+        fetch_data()},[user])
     useEffect(()=>{
       
-    },[auth])
+    },[auth,user])
     const handlelogin= async(e)=>{
       e.preventDefault()
       const getuser= user.filter(i=>i.username === userid && i.passcode===passcode)
       const bool=()=>{
         if(getuser.length){
-          
           return true
         }else{
-          
           return false
         }
       }
       bool()? navigate('/da'):navigate('/login')
       setauth(bool)
     }
+
+       const [uid,setuid]=useState('')
+       const [email,setemail]=useState('')
+       const [regpasscode,setregpasscode]=useState('')
+       const [conpass,setconpass]=useState('')
+       
+       const handlereg=async(e)=>{
+              e.preventDefault()
+              console.log(passvalidation())
+              if(passvalidation()===regpasscode){    
+                 const id= user.length ? user[user.length-1].id+1:1
+                 const newuser={id,username:uid,email:email,passcode:regpasscode}
+                 const newdata={...user,newuser}
+                 setuser(newdata)
+                 const postoption={
+                     method: 'POST',
+                     headers: {'Content-Type':'application/json'},
+                     body: JSON.stringify(newuser)
+                   }
+                   const result=await apiRequest(url,postoption)
+                   console.log(result)
+                   navigate('/login')
+              }else{console.log("error")
+                     navigate("/signup")}
+       }
+       const passvalidation=()=>{
+            if(regpasscode===conpass){
+              return regpasscode
+            }
+            else{
+              return "wrong"
+            }
+       }
       
   return (
     <div>
@@ -57,7 +88,15 @@ function App() {
                                         setuserid={setuserid}
                                         passcode={passcode}
                                         setpasscode={setpasscode}/>}/>
-        <Route path="/signup" element={<Signup/>}/>
+        <Route path="/signup" element={<Signup uid={uid}
+                                               setuid={setuid}
+                                               email={email}
+                                               setemail={setemail}
+                                               passcode={regpasscode}
+                                               setpasscode={setregpasscode}
+                                               conpass={conpass}
+                                               setconpass={setconpass}
+                                               handle={handlereg}/>}/>
         <Route path="/da" element={auth?<Dash/>:<Login handlelogin={handlelogin}
                                         userid={userid}
                                         setuserid={setuserid}
