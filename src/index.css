@@ -133,7 +133,7 @@ code {
   }
   .loginpanel{
     width: 90%;
-    height: 80vh;
+    height: 50vh;
     color: black;
     background-color: #d3e8a68d;
     border-radius: 100px;
@@ -158,7 +158,7 @@ code {
   }
   .signuppanel{
     width: 90%;
-    height: 80vh;
+    height: 60%;
     color: white;
     background-color: #d3e8a68d;
     border-radius: 100px;
@@ -177,6 +177,7 @@ code {
     font-weight: bold;
     font-size: 10px;
   }
+  
   .signuppanel h1{
     color: white;
   }

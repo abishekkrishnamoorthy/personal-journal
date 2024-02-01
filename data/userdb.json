@@ -1,5 +1,28 @@
 {
   "user": [
-   
+    {
+      "id": 1,
+      "username": "swethaa ",
+      "email": "sweaicool@gmail.com",
+      "passcode": "swethaa"
+    },
+    {
+      "id": 2,
+      "username": "swethaa",
+      "email": "sweaicool@gmail.com",
+      "passcode": "swethaa"
+    },
+    {
+      "id": 3,
+      "username": "sweai",
+      "email": "sweaicool@gmail.com",
+      "passcode": "abis0113"
+    },
+    {
+      "id": 4,
+      "username": "Swethaa B",
+      "email": "abishekkrishnamoorthy04@gmail.com",
+      "passcode": "abis111"
+    }
   ]
 }

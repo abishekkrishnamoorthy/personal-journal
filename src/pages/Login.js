@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Header from './Header'
+import Header from '../modules/common/Header'
 import { ToastContainer } from 'react-toastify'
 
 const Login = ({userid, setuserid, handlelogin, setpasscode, passcode}) => {

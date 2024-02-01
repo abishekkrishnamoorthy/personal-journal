@@ -1,9 +1,11 @@
 import {  Route, Routes, useNavigate} from "react-router-dom";
-import Login from "./Login";
-import Signup from "./Signup";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 import React ,{ useEffect, useState } from "react";
-import Dash from "./Dash";
+import Dash from "./pages/Dash";
 import apiRequest from './apiRequest'
+import Memories from "./pages/Memories";
+import Calender from "./pages/Calender";
 
 function App() {
      const url="http://localhost:5000/user"
@@ -18,12 +20,13 @@ function App() {
           const res=await fetch(url)
           if(!res.ok) throw Error("error")
           const users= await res.json()
+          setauth(true) 
           setuser(users)
         } catch (error) {
           
         }  
       }
-        fetch_data()},[user])
+    fetch_data()},[user])
     useEffect(()=>{
       
     },[auth,user])
@@ -102,6 +105,8 @@ function App() {
                                         setuserid={setuserid}
                                         passcode={passcode}
                                         setpasscode={setpasscode}/>}/>
+      <Route path="/memories" element={<Memories/>}/>
+      <Route path="/calendar" element={<Calender/>}/>
       </Routes>
     </div>
   );
