@@ -4,7 +4,7 @@ import { Navigate, useNavigate } from 'react-router-dom'
 
 
 
-const Signup = ({uid,setuid,email,setemail,passcode,setpasscode,conpass,setconpass,handle}) => {
+const Signup = ({uid,setuid,email,setemail,password,setpassword,conpass,setconpass,handle}) => {
          
   return (
     <div className="App">
@@ -29,14 +29,14 @@ const Signup = ({uid,setuid,email,setemail,passcode,setpasscode,conpass,setconpa
                onChange={(e)=>setemail(e.target.value)}
                />
         <input type="password" required 
-               id='passcode'
-               placeholder='PASSCODE'
-               value={passcode}
-               onChange={(e)=>setpasscode(e.target.value)}
+               id='password'
+               placeholder='password'
+               value={password}
+               onChange={(e)=>setpassword(e.target.value)}
                />
         <input type="text" required 
-               id='conpasscode'
-               placeholder='confrim PASSCODE'
+               id='conpassword'
+               placeholder='confrim password'
                value={conpass}
                onChange={(e)=>setconpass(e.target.value)}
                />               

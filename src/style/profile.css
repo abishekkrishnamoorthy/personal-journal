@@ -1,0 +1,17 @@
+.profilemain{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 60%;
+    height: 85vh;
+    padding-bottom: 2px;
+    background-color: #a7a39b35;
+    overflow-y:scroll ;
+}
+
+.profilecon{
+  width: 100%;
+  display: flex;
+  flex-direction:row;
+  height: 80vh;
+}

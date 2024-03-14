@@ -4,12 +4,14 @@ import Footer from '../modules/dash/Footer'
 import '../style/dash.css'
 import Dashmain from '../modules/dash/Dashmain'
 
-const Dash = () => {
+const Dash = ({cudetails,post}) => {
   return (
     <div className='dash'>
-      <Header/>
-      <Dashmain/>
-      <Footer/>
+      <Header cudetails={cudetails}/>
+      <div className='dashcon'>
+      <Dashmain post={post}/>
+      <Footer cudetails={cudetails}/>
+      </div>
     </div>
   )
 }

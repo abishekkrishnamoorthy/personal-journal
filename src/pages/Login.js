@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import Header from '../modules/common/Header'
 import { ToastContainer } from 'react-toastify'
 
-const Login = ({userid, setuserid, handlelogin, setpasscode, passcode}) => {
+const Login = ({username, setusername, handlelogin, setpassword, password}) => {
   
   return (
    <div className="App">
@@ -12,15 +12,15 @@ const Login = ({userid, setuserid, handlelogin, setpasscode, passcode}) => {
         <h1>SIGN IN</h1>
         <form  className='formlogin' onSubmit={handlelogin}>
         <input type="text" required 
-               id='userid'
-               placeholder='Username or Email'
-               value={userid}
-               onChange={(e)=>setuserid(e.target.value)}/>
+               id='username'
+               placeholder='Username'
+               value={username}
+               onChange={(e)=>setusername(e.target.value)}/>
         <input type="password" required 
-               id='passcode'
-               placeholder='Passcode'
-               value={passcode}
-               onChange={(e)=>setpasscode(e.target.value)}
+               id='password'
+               placeholder='password'
+               value={password}
+               onChange={(e)=>setpassword(e.target.value)}
                />
         <button>LOGIN</button>
                

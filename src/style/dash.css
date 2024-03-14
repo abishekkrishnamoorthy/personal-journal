@@ -1,18 +1,19 @@
 .dash{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    height: 100vh;
 }
 .headerdash{
     position: relative;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     background-color: transparent;
-    width: 25%;
-    height: 100vh;
+    width: 100%;
+    height: 10vh;
     text-align: center;
-    border-radius: 20px;
+    justify-content: start;
+    background-color: #5f9f84;
 }
 
 .headerdash .header{
@@ -28,49 +29,79 @@
 
 .nav{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
-    height: 90vh;
+    height: 10vh;
     background-color:transparent;
+    align-items: center;
+}
+.nav h1{
+  text-align: center;
+  font-size: 30px;
+  font-weight: bolder;
+  width: 15%;
 }
 
 .nav ul{
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align:center ;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
+  text-decoration: none;
+  align-self: center;
+  
 }
 
-.nav .navli{
-    padding: 20px;
-    text-decoration: none;
-    padding-left: 0;
-    margin-top: 20px;    
+.nav ul .navli{
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  text-decoration: none; 
+  list-style-type: none;
+  cursor: pointer;  
+  color: #f5f5f5;
+  font-size: larger;
+  font-weight:bolder;
+  margin-left: 50px;
 }
 
 .nav .navli:hover{
-    color: aliceblue;
-    background-color: #4caf50;
-    border-radius: 20px;
-    cursor: pointer;
+  color:#94eab1;
+  border-bottom: 5px solid #0c2113;
 }
-.nav button{
-    background-color: transparent;
-    width: 100%;
-    padding: 25px;
-    margin-top: 90%;
-    font-size: 20px;
-    border: none;
-    cursor: pointer;
-}
-.cur{
-    background-color: #4caf4f2e;
+.nav .profilenav{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    margin: 0;
+    width: 15%;
+    height: 8vh;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    background-color: #386351;
     border-radius: 20px;
     text-decoration: none;
+}
+.nav .profilenav .user{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+.nav .profilenav .user h3{
+  margin-bottom: 0;
+  margin-top: 0;
+  color: #09f011;
+}
+.nav .profilenav .user h4{
+  margin-top: 0;
+  margin-bottom: 0;
+  color: rgb(171, 230, 207);
+}
+.cur{
+  color:#94eab1;
+  border-bottom: 5px solid #0c2113;
+  text-decoration: none;
 }
 .nav button:hover{
     color: aliceblue;
@@ -78,23 +109,25 @@
     border-radius: 20px;
 }
 
-.dashmain{
-    width: 48%;
-    height: 95vh;
-    border-radius: 20px;
-    margin-left:1% ;
-    background-color: #cacfcccc;
+
+
+.dashcon{
+  width: 100%;
+  display: flex;
+  flex-direction:row;
+  height: 60vh;
 }
+
+
 .footerdash{
     display: flex;
     flex-direction: column;
     background-color: transparent;
-    width: 25%;
-    height: 100vh;
-    margin-left: 1%;
+    width: 20%;
+    height: 70vh;
+    margin-left: 3%;
     align-items: center;
     text-align: center;
-    
     border-radius: 20px;   
 }
 
@@ -139,11 +172,11 @@
   
 
   .footerdash  .modern-calendar {
-    width: 80%;
+    width: 100%;
     margin-top: 20px;
     min-width: 200px;
     background-color: #f5f5f5;
-    padding: 15px;
+    padding: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
   }
@@ -171,4 +204,52 @@
     background-color: #4caf50; /* Green color for the current date */
     color: #fff; /* White text on the current date */
   }
-  
+
+  .footerdash .create{
+    width: 100%;
+    margin-top: 50%;
+    height: auto;
+    padding: 20px;
+  }
+  .footerdash .create button{
+    width: 80%;
+    padding: 5%;
+    border-radius: 20px;
+    background-color: #4caf50;
+    border: none;
+    cursor: pointer;
+    font-size: larger;
+    color: #f5f5f5;
+  }
+  .footerdash .create button:hover{
+    width: 80%;
+    padding: 5%;
+    border-radius: 20px;
+    background-color: #408d42;
+    border: none;
+    cursor: pointer;
+    font-size: larger;
+    color: #f5f5f5;
+  }
+
+  /* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 20px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background:#0b2916; 
+  border-radius: 100px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000; 
+}
